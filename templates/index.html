@@ -36,12 +36,12 @@
                     {% if civ[1] == True %}
                         <button class="civ-btn-selected" name="civ" value="{{ civ[0] }}">
                             <img src="static/images/{{ civ[0] }}.png">
-                            <label for="civ">{{ civ[0] }}</label>
+                            {{ civ[0] }}
                         </button>
                     {% else %}
                         <button class="civ-btn-deselected" name="civ" value="{{ civ[0] }}">
                             <img src="static/images/{{ civ[0] }}.png">
-                            <label for="civ">{{ civ[0] }}</label>
+                            {{ civ[0] }}
                         </button>
                     {% endif %}
                 {% endfor %}

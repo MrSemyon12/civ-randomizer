@@ -34,6 +34,7 @@ body {
     display: grid;
     grid-gap: 10px;
     grid-template-columns: repeat(6, 240px);
+    grid-template-rows: repeat(8, 60px);
     align-content: center;
 }
 
@@ -45,13 +46,13 @@ img {
 
 .civ-btn-selected {
     display: flex;
-    align-items: center;    
+    align-items: center;      
     border-radius: 25px;
     font-size: 24px;
     font-weight: bold;
     width: 224px;
     background-color: blanchedalmond;
-    border: 2px solid black;
+    border: 3px solid black;
 }
 
 .civ-btn-deselected {
@@ -62,11 +63,15 @@ img {
     font-weight: bold;
     width: 224px;
     background-color: lightblue;
-    border: 0px solid black;
+    border: 3px solid lightblue;
 }
 
 .civ-btn-selected:hover {
     background-color: brown ;
+}
+
+.civ-btn-deselected:hover {
+    border: 3px solid black;
 }
 
 .sample {
@@ -75,8 +80,4 @@ img {
     justify-content: center;
     font-size: 24px;
     font-weight: bold;
-}
-
-.result {
-    
 }
