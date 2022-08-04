@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: lightblue;
+}
+
+.upper-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: brown;
+    padding: 20px;
+    height: 32px;
+}
+
+.upper-bar > a {
+    position: fixed;
+    left: 10px;   
+    color: blanchedalmond;    
+}
+
+img {
+    width: 300px; 
+    height: 300px;
+    vertical-align: middle;
+    border-radius: 50%;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;    
+}
