@@ -1,3 +1,3 @@
 # Flask-Application
 
-## <a href="http://167.99.255.113:5555/">Go checkout</a>
+## <a href="http://mrsemyon12.pythonanywhere.com/">Go checkout: http://mrsemyon12.pythonanywhere.com/</a>
