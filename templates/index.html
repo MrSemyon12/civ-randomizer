@@ -49,7 +49,12 @@
         </div>
     </form>
     <div class="result">
-        {% for sample in result.items() %}
+        {% if result == {} %}
+            <div class="sample">
+                <label>Not enough pool for randomization!</label>
+            </div>
+        {% else %}
+            {% for sample in result.items() %}
             <div class="sample">
                 <label>Player {{ sample[0] }}:</label>
                 {% for civ in sample[1] %}
@@ -57,7 +62,8 @@
                     <label>{{ civ }}</label>
                 {% endfor %}
             </div>
-        {% endfor %}
+            {% endfor %}
+        {% endif %}
     </div>
 </body>
 </html>

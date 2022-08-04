@@ -113,15 +113,18 @@ def standartCivs():
 
 
 def randomizeCivs(civs, players, sampleSize):
-    pool = [civ[0] for civ in civs.items() if civ[1]]
-    res = {}
+    try:
+        pool = [civ[0] for civ in civs.items() if civ[1]]
+        res = {}
 
-    for i in range(int(players)):
-        sample = getRandomSample(pool, sampleSize)
-        pool = [civ for civ in pool if civ not in sample]
-        res[i + 1] = sample
+        for i in range(int(players)):
+            sample = getRandomSample(pool, sampleSize)
+            pool = [civ for civ in pool if civ not in sample]
+            res[i + 1] = sample
 
-    return res
+        return res      
+    except:
+        return {}
 
 
 def getRandomSample(pool, sampleSize):    
