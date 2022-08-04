@@ -15,7 +15,7 @@ def index():
         civName = request.form['civ']
         civs[civName] = not civs[civName]
           
-    else:
+    elif 'command' in keys:
         command = request.form['command']
         if command == 'Invert':
             civs.update(invertCivs(civs))
@@ -28,6 +28,11 @@ def index():
             result.update(randomizeCivs(civs, players, choice))
 
     return render_template('index.html', civs=civs, result=result)
+
+
+@app.route('/author')
+def author():
+    return render_template('author.html')
 
 
 if __name__ == '__main__':

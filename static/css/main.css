@@ -10,6 +10,7 @@ body {
     align-items: center;
     background-color: brown;
     padding: 20px;
+    height: 32px;
 }
 
 .grid {
@@ -28,6 +29,14 @@ body {
     margin-left: 10px;
     font-size: 24px;
     background-color: blanchedalmond;    
+}
+
+.upper-bar > a {
+    position: fixed;
+    left: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: blanchedalmond;    
 }
 
 .wrapper {
