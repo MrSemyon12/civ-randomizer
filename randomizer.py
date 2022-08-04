@@ -1,8 +1,4 @@
-import imp
-
-
 import random
-import sys
 
 
 def initializeCivs():

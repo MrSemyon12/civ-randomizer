@@ -36,12 +36,12 @@
                 {% for civ in civs.items() %}
                     {% if civ[1] == True %}
                         <button class="civ-btn-selected" name="civ" value="{{ civ[0] }}">
-                            <img src="static/images/{{ civ[0] }}.png">
+                            <img src="static/images/{{ civ[0].lower() }}.png">
                             {{ civ[0] }}
                         </button>
                     {% else %}
                         <button class="civ-btn-deselected" name="civ" value="{{ civ[0] }}">
-                            <img src="static/images/{{ civ[0] }}.png">
+                            <img src="static/images/{{ civ[0].lower() }}.png">
                             {{ civ[0] }}
                         </button>
                     {% endif %}
@@ -59,7 +59,7 @@
             <div class="sample">
                 <label>Player {{ sample[0] }}:</label>
                 {% for civ in sample[1] %}
-                    <img src="static/images/{{ civ }}.png">
+                    <img src="static/images/{{ civ.lower() }}.png">
                     <label>{{ civ }}</label>
                 {% endfor %}
             </div>
