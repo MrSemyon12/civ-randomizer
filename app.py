@@ -22,8 +22,8 @@ def index():
         elif command == 'Standart':
             civs.update(standartCivs())
         elif command == 'Randomize':
-            players = request.form['players']
-            choice = request.form['choice']
+            players = int(request.form['players'])
+            choice = int(request.form['choice'])
             result.update(randomizeCivs(civs, players, choice))
 
     return render_template('index.html', civs=civs, result=result)
@@ -31,3 +31,4 @@ def index():
 
 if __name__ == '__main__':
     app.run(debug=True)
+    

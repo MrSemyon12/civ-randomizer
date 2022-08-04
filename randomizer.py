@@ -1,4 +1,8 @@
-from random import random
+import imp
+
+
+import random
+import sys
 
 
 def initializeCivs():
@@ -109,13 +113,16 @@ def standartCivs():
 
 
 def randomizeCivs(civs, players, sampleSize):
-    res = []
+    pool = [civ[0] for civ in civs.items() if civ[1]]
+    res = {}
+
     for i in range(int(players)):
-        sample = getRandomSample(civs, sampleSize)
-        civs -= sample
-        res.append((i + 1, sample))
+        sample = getRandomSample(pool, sampleSize)
+        pool = [civ for civ in pool if civ not in sample]
+        res[i + 1] = sample
+
     return res
 
 
-def getRandomSample(civs, sampleSize):
-    return random.sample(civs, sampleSize)
+def getRandomSample(pool, sampleSize):    
+    return random.sample(pool, sampleSize)
