@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    font-family: sans-serif;     
+    background-color: lightblue;
+}
+
+.upper-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: brown;
+    padding: 20px;
+}
+
+.grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.upper-bar > input {
+    margin-left: 10px;
+    font-size: 24px;
+}
+
+.upper-bar > label {    
+    margin-left: 10px;
+    font-size: 24px;
+    background-color: blanchedalmond;    
+}
+
+.wrapper {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(6, 240px);
+    align-content: center;
+}
+
+img {
+    width: 50px; 
+    height: 50px;
+    vertical-align: middle;
+}
+
+.civ-btn-selected {
+    display: flex;
+    align-items: center;    
+    border-radius: 25px;
+    font-size: 24px;
+    font-weight: bold;
+    width: 224px;
+    background-color: blanchedalmond;
+    border: 2px solid black;
+}
+
+.civ-btn-deselected {
+    display: flex;
+    align-items: center;    
+    border-radius: 25px;
+    font-size: 24px;
+    font-weight: bold;
+    width: 224px;
+    background-color: lightblue;
+    border: 0px solid black;
+}
+
+.civ-btn:hover {
+    background-color: brown ;
+}

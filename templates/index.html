@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+    <form action="/" method="POST">
+        <div class="upper-bar">
+            <input type="submit" name="command" value="Invert">
+            <input type="submit" name="command" value="Standart">
+            <input type="submit" name="command" value="Randomize">
+            <label for="players">Players</label>
+            <select name="players" style="font-size: 24px">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3" selected>3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+            </select>
+            <label for="choice">Choice</label>
+            <select name="choice" style="font-size: 24px">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3" selected>3</option>
+            </select>
+        </div>
+        <div class="grid">
+            <div class="wrapper">
+                {% for civ in civs.items() %}
+                    {% if civ[1] == True %}
+                        <button class="civ-btn-selected" name="civ" value="{{ civ[0] }}">
+                            <img src="static/images/{{ civ[0] }}.png">
+                            <label>{{ civ[0] }}</label>
+                        </button>
+                    {% else %}
+                        <button class="civ-btn-deselected" name="civ" value="{{ civ[0] }}">
+                            <img src="static/images/{{ civ[0] }}.png">
+                            <label>{{ civ[0] }}</label>
+                        </button>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </form>
+    <div class="result">
+        {{result}}
+    </div>
+</body>
+</html>
