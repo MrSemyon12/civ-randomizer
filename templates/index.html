@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 </head>
+
 <body>
     <form action="/" method="POST">
         <div class="upper-bar">
@@ -34,37 +36,38 @@
         <div class="grid">
             <div class="wrapper">
                 {% for civ in civs.items() %}
-                    {% if civ[1] == True %}
-                        <button class="civ-btn-selected" name="civ" value="{{ civ[0] }}">
-                            <img src="static/images/{{ civ[0].lower() }}.png">
-                            {{ civ[0] }}
-                        </button>
-                    {% else %}
-                        <button class="civ-btn-deselected" name="civ" value="{{ civ[0] }}">
-                            <img src="static/images/{{ civ[0].lower() }}.png">
-                            {{ civ[0] }}
-                        </button>
-                    {% endif %}
+                {% if civ[1] == True %}
+                <button class="civ-btn-selected" name="civ" value="{{ civ[0] }}">
+                    <img src="static/images/{{ civ[0].lower() }}.png">
+                    {{ civ[0] }}
+                </button>
+                {% else %}
+                <button class="civ-btn-deselected" name="civ" value="{{ civ[0] }}">
+                    <img src="static/images/{{ civ[0].lower() }}.png">
+                    {{ civ[0] }}
+                </button>
+                {% endif %}
                 {% endfor %}
             </div>
         </div>
     </form>
     <div class="result">
         {% if result == {} %}
-            <div class="sample">
-                <label>Not enough pool for randomization!</label>
-            </div>
+        <div class="sample">
+            <label>Not enough pool for randomization!</label>
+        </div>
         {% else %}
-            {% for sample in result.items() %}
-            <div class="sample">
-                <label>Player {{ sample[0] }}:</label>
-                {% for civ in sample[1] %}
-                    <img src="static/images/{{ civ.lower() }}.png">
-                    <label>{{ civ }}</label>
-                {% endfor %}
-            </div>
+        {% for sample in result.items() %}
+        <div class="sample">
+            <label>Player {{ sample[0] }}:</label>
+            {% for civ in sample[1] %}
+            <img src="static/images/{{ civ.lower() }}.png">
+            <label>{{ civ }}</label>
             {% endfor %}
+        </div>
+        {% endfor %}
         {% endif %}
     </div>
 </body>
+
 </html>

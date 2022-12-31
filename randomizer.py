@@ -2,8 +2,8 @@ import random
 
 
 def initializeCivs():
-	civs = {
-        "America": True,              
+    civs = {
+        "America": True,
         "America": True,
         "Arabia": True,
         "Assyria": True,
@@ -48,7 +48,7 @@ def initializeCivs():
         "Venice": True,
         "Zulus": True
     }
-	return civs
+    return civs
 
 
 def invertCivs(civs):
@@ -60,7 +60,7 @@ def invertCivs(civs):
 
 def standartCivs():
     civs = {
-        "America": True,              
+        "America": True,
         "America": True,
         "Arabia": True,
         "Assyria": True,
@@ -118,10 +118,10 @@ def randomizeCivs(civs, players, sampleSize):
             pool = [civ for civ in pool if civ not in sample]
             res[i + 1] = sample
 
-        return res      
+        return res
     except:
         return {}
 
 
-def getRandomSample(pool, sampleSize):    
+def getRandomSample(pool, sampleSize):
     return random.sample(pool, sampleSize)

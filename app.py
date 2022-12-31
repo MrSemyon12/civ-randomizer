@@ -7,6 +7,7 @@ civs = initializeCivs()
 picked = civs
 result = {}
 
+
 @app.route('/', methods=['POST', 'GET'])
 def index():
     keys = request.form.keys()
@@ -14,7 +15,7 @@ def index():
     if 'civ' in keys:
         civName = request.form['civ']
         civs[civName] = not civs[civName]
-          
+
     elif 'command' in keys:
         command = request.form['command']
         if command == 'Invert':
@@ -36,4 +37,4 @@ def author():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
